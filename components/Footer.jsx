@@ -8,7 +8,7 @@ const Footer = () => {
     <Box component="footer" sx={{ bgcolor: 'background.paper', py: 3, mt: 'auto' }}>
       <Container maxWidth="lg">
         <Typography variant="body1" align="center">
-          © {new Date().getFullYear()} My Financial App
+          © {new Date().getFullYear()} EdgeRed
         </Typography>
       </Container>
     </Box>

@@ -1,3 +1,5 @@
+// number
+
 import React from "react";
 import Dropdown from "../components/Dropdown"; 
 import Layout from "../components/Layout";
@@ -5,18 +7,12 @@ import { useRouter } from "next/router";
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
+import { useState } from "react";
+import TextInput from "../components/TextInput";
 
 function Income() {
-    const incomeOptions = [
-        { label: "10,000 - 20,000", value: "10000-20000" },
-        { label: "20,001 - 30,000", value: "20001-30000" },
-        { label: "30,001 - 40,000", value: "30001-40000" },
-        // more options
-    ];
-
-    const handleSelect = (value) => {
-        console.log("Selected Income Range:", value);
-    };
+    const router = useRouter();
+    const [income, setIncome] = useState('');
 
     const handlePrevious = () => {
         console.log("Previous button clicked");
@@ -24,6 +20,7 @@ function Income() {
 
     const handleNext = () => {
         console.log("Next button clicked");
+        router.push('/HousingSituation');
     };
 
     return (
@@ -31,10 +28,11 @@ function Income() {
             <Typography variant="h4" component="h1" gutterBottom>
                 Income
             </Typography>
-            <Dropdown
-                options={incomeOptions}
-                label="Income Range"
-                onSelect={handleSelect}
+            <TextInput
+                type="number"
+                label="Income"
+                onChange={setIncome}
+                value={income}
             />
             <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
             <Button variant="contained" color="primary">

@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
+import TextInput from "../components/TextInput"; 
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Layout from "../components/Layout";
 
 function Age() {
-    const [age, setAge] = useState(0);
+    const [age, setAge] = useState('');
     const router = useRouter();
 
     const handleSave = () => {
@@ -14,17 +19,25 @@ function Age() {
     };
 
     return (
-        <div>
-            <h1>Please enter your age:</h1>
-            <input
+        <Layout>
+            <Typography variant="h4" gutterBottom>
+                Please enter your age:
+            </Typography>
+            <TextInput
                 type="number"
+                label="Age"
+                onChange={setAge}
                 value={age}
-                onChange={(e) => setAge(Number(e.target.value))}
-                placeholder="Age"
             />
-            <button onClick={handleSave}>Save</button>
-            <button onClick={handleNext}>Next</button>
-        </div>
+            <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between' }}>
+                <Button variant="contained" onClick={handleSave}>
+                    Save
+                </Button>
+                <Button variant="contained" color="primary" onClick={handleNext}>
+                    Next
+                </Button>
+            </Box>
+        </Layout>
     );
 }
 
