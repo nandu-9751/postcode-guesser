@@ -26,6 +26,7 @@ function  BirthCountry() {
         { value: "Mexico", label: "Mexico" },
         { value: "Russia", label: "Russia" },
         { value: "South_Korea", label: "South Korea" },
+        { value: "Other", label: "Other" },
         // more countries...
     ];
     

@@ -28,7 +28,7 @@ function HouseSize() {
     return (
         <Layout>
             <Typography variant="h4" component="h1" gutterBottom>
-                Please enter your house size:
+                Enter your Household Size
             </Typography>
             <TextInput
                 type="number"

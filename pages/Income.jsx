@@ -26,7 +26,7 @@ function Income() {
     return (
         <Layout>
             <Typography variant="h4" component="h1" gutterBottom>
-                Income
+                Enter Your Weekly Income
             </Typography>
             <TextInput
                 type="number"
@@ -38,7 +38,7 @@ function Income() {
             <Button variant="contained" color="primary">
                 Previous
             </Button>
-            <Button variant="contained" color="primary">
+            <Button variant="contained" color="primary" onClick={handleNext}> 
                 Next
             </Button>
             </Box>

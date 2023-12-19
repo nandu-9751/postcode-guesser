@@ -21,7 +21,7 @@ function Age() {
     return (
         <Layout>
             <Typography variant="h4" gutterBottom>
-                Please enter your age:
+                Enter in Your Age
             </Typography>
             <TextInput
                 type="number"
