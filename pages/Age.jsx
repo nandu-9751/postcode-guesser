@@ -10,10 +10,6 @@ function Age() {
     const [age, setAge] = useState('');
     const router = useRouter();
 
-    const handleSave = () => {
-        console.log(age);
-    };
-
     const handleNext = () => {
         router.push('/HouseSize'); // next page; change accordingly
     };
@@ -29,10 +25,7 @@ function Age() {
                 onChange={setAge}
                 value={age}
             />
-            <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between' }}>
-                <Button variant="contained" onClick={handleSave}>
-                    Save
-                </Button>
+            <Box sx={{ mt: 2, display: 'flex', justifyContent: 'flex-end' }}>
                 <Button variant="contained" color="primary" onClick={handleNext}>
                     Next
                 </Button>

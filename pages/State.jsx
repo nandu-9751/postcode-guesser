@@ -28,6 +28,7 @@ function  State() {
 
     const handlePrevious = () => {
         console.log("Previous button clicked");
+        router.push('/HousingSituation');
     };
 
     const handleNext = () => {
@@ -47,7 +48,7 @@ function  State() {
             />
             <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
             <Button variant="contained" color="primary" onClick={handlePrevious}>
-                Previous
+                Back
             </Button>
             <Button variant="contained" color="primary" onClick={handleNext}>
                 Next

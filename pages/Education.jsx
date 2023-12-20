@@ -9,6 +9,7 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 
 function  Education() {
+    const router = useRouter();
     const incomeOptions = [
         { label: "Primary education", value: "primary_education" },
         { label: "Secondary education", value: "secondary_education" },
@@ -24,10 +25,12 @@ function  Education() {
 
     const handlePrevious = () => {
         console.log("Previous button clicked");
+        router.push('/Dwelling');
     };
 
     const handleNext = () => {
         console.log("Next button clicked");
+        router.push('/Result');
     };
 
     return (
@@ -42,7 +45,7 @@ function  Education() {
             />
             <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
             <Button variant="contained" color="primary" onClick={handlePrevious}>
-                Previous
+                Back
             </Button>
             <Button variant="contained" color="primary" onClick={handleNext}>
                 Next

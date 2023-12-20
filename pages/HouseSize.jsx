@@ -12,10 +12,6 @@ function HouseSize() {
     const [size, setSize] = useState('');
     const router = useRouter();
 
-    const handleSave = () => {
-        console.log(size);
-    };
-
     const handleNext = () => {
         console.log("Next button clicked");
         router.push('/Income');
@@ -23,6 +19,7 @@ function HouseSize() {
 
     const handlePrevious = () => {
         console.log("Previous button clicked");
+        router.push('/Age');
     };
 
     return (
@@ -34,11 +31,11 @@ function HouseSize() {
                 type="number"
                 value={size}
                 onChange={(e) => setSize(Number(e.target.value))}
-                placeholder="HouseSize"
+                label="Household Size"
             />
             <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between' }}>
-                <Button variant="contained" onClick={handleSave}>
-                    Save
+                <Button variant="contained" onClick={handlePrevious}>
+                    Back
                 </Button>
                 <Button variant="contained" color="primary" onClick={handleNext}>
                     Next

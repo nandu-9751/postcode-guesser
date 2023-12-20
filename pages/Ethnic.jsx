@@ -30,6 +30,7 @@ function  Ethnic() {
 
     const handlePrevious = () => {
         console.log("Previous button clicked");
+        router.push('/State');
     };
 
     const handleNext = () => {
@@ -49,7 +50,7 @@ function  Ethnic() {
             />
             <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
             <Button variant="contained" color="primary" onClick={handlePrevious}>
-                Previous
+                Back
             </Button>
             <Button variant="contained" color="primary" onClick={handleNext}>
                 Next

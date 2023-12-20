@@ -16,6 +16,7 @@ function Income() {
 
     const handlePrevious = () => {
         console.log("Previous button clicked");
+        router.push('/HouseSize');
     };
 
     const handleNext = () => {
@@ -35,8 +36,8 @@ function Income() {
                 value={income}
             />
             <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
-            <Button variant="contained" color="primary">
-                Previous
+            <Button variant="contained" color="primary" onClick={handlePrevious}>
+                Back
             </Button>
             <Button variant="contained" color="primary" onClick={handleNext}> 
                 Next
