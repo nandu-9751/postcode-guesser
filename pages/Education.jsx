@@ -32,6 +32,7 @@ function  Education() {
     };
 
     const handleNext = () => {
+        // check if education is selected
         if (!education) {
             alert("Please select your highest education level");
         }

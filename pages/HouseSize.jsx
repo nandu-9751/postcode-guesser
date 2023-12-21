@@ -13,6 +13,7 @@ function HouseSize() {
     const router = useRouter();
 
     const handleNext = () => {
+        // house size must be a number, and it must be greater than 0
         if ((size < 1) || (isNaN(size))) {
             alert("Please enter a valid household size");
             return;

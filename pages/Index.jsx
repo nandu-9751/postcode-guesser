@@ -20,14 +20,18 @@ function Index() {
         <Layout>
             <Paper 
                 sx={{
-                    mt: 8,
+                    mt: 4,
                     p: 4,
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
                     backgroundColor: theme.palette.background.paper,
                     borderRadius: theme.shape.borderRadius,
+                    borderWidth: '1px', 
+                    borderStyle: 'solid', 
+                    borderColor: 'divider', 
                 }}
+                elevation={0} 
             >
                 <Typography variant="h2" component="h1" gutterBottom>
                     Welcome to EdgeRed Postcode Guesser
@@ -43,7 +47,7 @@ function Index() {
                     maxWidth: { xs: 350, md: 250 },
                 }}/>
                 <Button variant="contained" color="primary" onClick={handleNext} size="large">
-                    Start Now
+                    Start Now!
                 </Button>
             </Paper>
         </Layout>

@@ -35,6 +35,7 @@ function  State() {
     };
 
     const handleNext = () => {
+        // user must select a state
         if (!selectedState) {
             alert("Please select your state.");
         }

@@ -20,7 +20,6 @@ function Result() {
     const handleSubmit = () => {
         console.log("Submit button clicked");
         router.push('/Index');
-        alert("Thank you for your submission!");
     };
 
     return (

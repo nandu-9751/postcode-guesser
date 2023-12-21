@@ -36,6 +36,7 @@ function  Ethnic() {
     };
 
     const handleNext = () => {
+        // check if user has selected an enthinic background
         if (!selectedEthnic) {
             alert("Please select your ethnic background.");
         }
