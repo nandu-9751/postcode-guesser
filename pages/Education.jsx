@@ -27,7 +27,6 @@ function  Education() {
     };
 
     const handlePrevious = () => {
-        console.log("Previous button clicked");
         router.push('/Dwelling');
     };
 
@@ -37,7 +36,10 @@ function  Education() {
             alert("Please select your highest education level");
         }
         else {
-            console.log("Next button clicked");
+            localStorage.setItem('education', JSON.stringify(education));
+            // print all the data from local storage
+            console.log(localStorage);
+            console.log(JSON.parse(localStorage.getItem('birthCountry'))); // example to get birthCountry
             router.push('/Result');
         }
     };

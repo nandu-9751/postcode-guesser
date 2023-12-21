@@ -25,11 +25,15 @@ const PostcodeTable = () => {
 
     const handleSubmit = () => {
         console.log("Submit button clicked");
+        // print localStorage of postcode
+        console.log(localStorage.getItem('selectedPostcode'));
         alert("Thank you for your submission!");
     };
 
     const handleRadioChange = (event) => {
-        setSelectedPostcode(event.target.value);
+        const newPostcode = event.target.value;
+        setSelectedPostcode(newPostcode);
+        localStorage.setItem('correctPostcode', newPostcode);   //we guessed the postcode correctly, so we can update the database
     };
 
     return (

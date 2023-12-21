@@ -18,11 +18,11 @@ function HouseSize() {
             alert("Please enter a valid household size");
             return;
         }
+        localStorage.setItem('houseSize', JSON.stringify(size));
         router.push('/Income');
     };
 
     const handlePrevious = () => {
-        console.log("Previous button clicked");
         router.push('/Age');
     };
 

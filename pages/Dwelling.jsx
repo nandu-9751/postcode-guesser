@@ -30,7 +30,6 @@ function Dwelling() {
     };
 
     const handlePrevious = () => {
-        console.log("Previous button clicked");
         router.push('/Language');
     };
 
@@ -39,7 +38,7 @@ function Dwelling() {
             alert("Please select a dwelling type");
         }
         else {
-            console.log("Next button clicked");
+            localStorage.setItem('dwelling', JSON.stringify(dwelling));
             router.push('/Education');
         }
     };

@@ -33,7 +33,6 @@ function Language() {
     };
 
     const handlePrevious = () => {
-        console.log("Previous button clicked");
         router.push('/BirthCountry');
     };
 
@@ -43,7 +42,7 @@ function Language() {
         }
         else {
             console.log(selectedLanguage)
-            console.log("Next button clicked");
+            localStorage.setItem('language', JSON.stringify(selectedLanguage));
             router.push('/Education');
         }
     };

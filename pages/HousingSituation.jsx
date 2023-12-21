@@ -24,7 +24,6 @@ function HousingSituation() {
     };
 
     const handlePrevious = () => {
-        console.log("Previous button clicked");
         router.push('/Income');
     };
 
@@ -33,6 +32,9 @@ function HousingSituation() {
             alert("Please enter a valid housing situation and amount");
             return;
         }
+        //store housing situation and amount in local storage
+        localStorage.setItem('housingSituation-housing', JSON.stringify(housing));
+        localStorage.setItem('housingSituation-amount', JSON.stringify(amount));
         router.push('/State');
     };
 

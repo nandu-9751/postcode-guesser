@@ -13,12 +13,12 @@ function Result() {
     const [postcode, setPostcode] = useState('');
 
     const handleBack = () => {
-        console.log("Back button clicked");
+        localStorage.clear(); // clear all the data we've collected so far
         router.push('/Index');
     };
 
     const handleSubmit = () => {
-        console.log("Submit button clicked");
+        localStorage.setItem('truePostcode', JSON.stringify(postcode)); // if we didn't guess the postcode correctly, we can use this to update the database
         router.push('/Index');
     };
 

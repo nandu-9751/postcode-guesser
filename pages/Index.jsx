@@ -13,6 +13,7 @@ function Index() {
     const router = useRouter();
 
     const handleNext = () => {
+        localStorage.clear(); // clear all previous data
         router.push('/Age'); // next page; change accordingly
     };
 

@@ -19,9 +19,9 @@ function Age() {
             alert("Please enter a valid age.");
         }
         else {
+            localStorage.setItem('age', JSON.stringify(age));
             router.push('/HouseSize');
         }
-
     };
 
     return (

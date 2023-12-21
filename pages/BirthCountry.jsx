@@ -38,7 +38,6 @@ function  BirthCountry() {
     };
 
     const handlePrevious = () => {
-        console.log("Previous button clicked");
         router.push('/Ethnic');
     };
 
@@ -49,7 +48,7 @@ function  BirthCountry() {
         }
         else {
             console.log(selectedCountry)
-            console.log("Next button clicked");
+            localStorage.setItem('birthCountry', JSON.stringify(selectedCountry));
             router.push('/Language');
         }
     };

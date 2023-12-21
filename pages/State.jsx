@@ -30,7 +30,6 @@ function  State() {
     };
 
     const handlePrevious = () => {
-        console.log("Previous button clicked");
         router.push('/HousingSituation');
     };
 
@@ -40,8 +39,8 @@ function  State() {
             alert("Please select your state.");
         }
         else {
-            console.log(selectedState)
-            console.log("Next button clicked");
+            console.log(selectedState);
+            localStorage.setItem('state', JSON.stringify(selectedState));
             router.push('/Ethnic');
         }
     };

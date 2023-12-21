@@ -15,7 +15,6 @@ function Income() {
     const [income, setIncome] = useState('');
 
     const handlePrevious = () => {
-        console.log("Previous button clicked");
         router.push('/HouseSize');
     };
 
@@ -24,6 +23,7 @@ function Income() {
             alert("Please enter a valid income");
             return;
         }
+        localStorage.setItem('income', JSON.stringify(income));
         router.push('/HousingSituation');
     };
 
