@@ -20,14 +20,17 @@ function Income() {
     };
 
     const handleNext = () => {
-        console.log("Next button clicked");
+        if ((income < 1) || (isNaN(income))) {
+            alert("Please enter a valid income");
+            return;
+        }
         router.push('/HousingSituation');
     };
 
     return (
         <Layout>
             <Typography variant="h4" component="h1" gutterBottom>
-                Enter Your Weekly Income
+                3. Enter Your Weekly Income
             </Typography>
             <TextInput
                 type="number"

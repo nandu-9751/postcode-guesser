@@ -1,6 +1,6 @@
 // dropdown
 
-import React from "react";
+import React, {useState} from "react";
 import Dropdown from "../components/Dropdown"; 
 import Layout from "../components/Layout";
 import { useRouter } from "next/router";
@@ -23,10 +23,13 @@ function Language() {
         // more languages...
     ];
     
+    const [selectedLanguage, setSelectedLanguage] = useState(null);
+
     const router = useRouter();
 
     const handleSelect = (value) => {
         console.log("Selected Language:", value);
+        setSelectedLanguage(value);
     };
 
     const handlePrevious = () => {
@@ -35,14 +38,20 @@ function Language() {
     };
 
     const handleNext = () => {
-        console.log("Next button clicked");
-        router.push('/Dwelling'); 
+        if (!selectedLanguage) {
+            alert("Please select your language.");
+        }
+        else {
+            console.log(selectedLanguage)
+            console.log("Next button clicked");
+            router.push('/Education');
+        }
     };
 
     return (
         <Layout>
             <Typography variant="h4" component="h1" gutterBottom>
-                What language do you speak at home?
+                8. What language do you speak at home?
             </Typography>
             <Dropdown
                 options={languageOptions}

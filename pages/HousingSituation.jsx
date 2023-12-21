@@ -12,7 +12,7 @@ import TextInput from "../components/TextInput";
 
 function HousingSituation() {
     const router = useRouter();
-    const [housing, setHousing] = useState('');
+    const [housing, setHousing] = useState(null);
 
     const handlePrevious = () => {
         console.log("Previous button clicked");
@@ -20,17 +20,20 @@ function HousingSituation() {
     };
 
     const handleNext = () => {
-        console.log("Next button clicked");
+        if (!housing) {
+            alert("Please enter a valid housing situation");
+            return;
+        }
         router.push('/State');
     };
 
     return (
         <Layout>
             <Typography variant="h4" component="h1" gutterBottom>
-                Housing Situation (mortage, rent, etc.)
+                4. Housing Situation (mortage, rent, etc.)
             </Typography>
             <TextInput
-                type="number"
+                type={String}
                 label="Housing Situation"
                 onChange={setHousing}
                 value={housing}

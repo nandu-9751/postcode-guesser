@@ -11,13 +11,23 @@ function Age() {
     const router = useRouter();
 
     const handleNext = () => {
-        router.push('/HouseSize'); // next page; change accordingly
+        // check if age is empty
+        // check if age is a number, and if it is, check if it is greater than 0, and if it is, check if it is less than 120
+        // if all of these are true, then go to the next page
+        // otherwise, show an error message
+        if ((age === '') || (age === null) || (isNaN(age)) || (age <= 0) || (age > 120)) {
+            alert("Please enter a valid age.");
+        }
+        else {
+            router.push('/HouseSize');
+        }
+
     };
 
     return (
         <Layout>
             <Typography variant="h4" gutterBottom>
-                Enter in Your Age
+                1. Enter in Your Age
             </Typography>
             <TextInput
                 type="number"

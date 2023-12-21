@@ -1,4 +1,3 @@
-// 在 src/components/Layout.jsx
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -12,9 +11,13 @@ const Layout = ({ children }) => {
     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6">
-            EdgeRed Postcode Guesser
+          <Box sx={{ display: 'flex', flexGrow: 1, justifyContent: 'flex-start' }}>
+            <img src="/logo.png" alt="Logo" style={{ height: '50px' }} />
+          </Box>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
+            Postcode Guesser
           </Typography>
+          <Box sx={{ display: 'flex', flexGrow: 2 }} /> {/* Placeholder to balance the layout */}
         </Toolbar>
       </AppBar>
 

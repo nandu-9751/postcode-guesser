@@ -23,6 +23,11 @@ const PostcodeTable = () => {
         setPage(page - 1);
     };
 
+    const handleSubmit = () => {
+        console.log("Submit button clicked");
+        alert("Thank you for your submission!");
+    };
+
     const handleRadioChange = (event) => {
         setSelectedPostcode(event.target.value);
     };
@@ -34,7 +39,7 @@ const PostcodeTable = () => {
                     <TableRow sx={{ height: 'auto' }}>
                         <TableCell align="center" style={{ width: '33.33%' }}>Rank (From highest possibility to lowest)</TableCell>
                         <TableCell align="center" style={{ width: '33.33%' }}>Postcode</TableCell>
-                        <TableCell align="center" style={{ width: '33.33%' }}>Select</TableCell>
+                        <TableCell align="center" style={{ width: '33.33%' }}>Select if we got it</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -61,7 +66,7 @@ const PostcodeTable = () => {
         </TableContainer>
         <br />
         <Box sx={{ display: 'flex', justifyContent: 'center', my: 2 }}>
-            <Button variant="contained" color="primary" disabled={selectedPostcode === ''}>
+            <Button variant="contained" color="primary" disabled={selectedPostcode === ''} onClick={handleSubmit}>
                 Submit Correct Postcode
             </Button>
         </Box>

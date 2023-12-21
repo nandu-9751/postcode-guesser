@@ -1,6 +1,6 @@
 // dropdown
 
-import React from "react";
+import React, { useState } from "react";
 import Dropdown from "../components/Dropdown"; 
 import Layout from "../components/Layout";
 import { useRouter } from "next/router";
@@ -19,8 +19,11 @@ function  Education() {
         // more options
     ];
 
+    const [education, setEducation] = useState(null);
+
     const handleSelect = (value) => {
         console.log("Selected Highest Education:", value);
+        setEducation(value);
     };
 
     const handlePrevious = () => {
@@ -29,14 +32,19 @@ function  Education() {
     };
 
     const handleNext = () => {
-        console.log("Next button clicked");
-        router.push('/Result');
+        if (!education) {
+            alert("Please select your highest education level");
+        }
+        else {
+            console.log("Next button clicked");
+            router.push('/Result');
+        }
     };
 
     return (
         <Layout>
             <Typography variant="h4" component="h1" gutterBottom>
-                Choose your highest education level
+                10. Choose your highest education level
             </Typography>
             <Dropdown
                 options={incomeOptions}

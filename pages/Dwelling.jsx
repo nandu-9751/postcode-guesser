@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Dropdown from "../components/Dropdown"; 
 import Layout from "../components/Layout";
 import { useRouter } from "next/router";
@@ -20,10 +20,13 @@ function Dwelling() {
         // more dwelling types...
     ];
     
+    const [dwelling, setDwelling] = useState(null);
+
     const router = useRouter();
 
     const handleSelect = (value) => {
         console.log("Selected Dwelling:", value);
+        setDwelling(value);
     };
 
     const handlePrevious = () => {
@@ -32,14 +35,19 @@ function Dwelling() {
     };
 
     const handleNext = () => {
-        console.log("Next button clicked");
-        router.push('/Education');
+        if (!dwelling) {
+            alert("Please select a dwelling type");
+        }
+        else {
+            console.log("Next button clicked");
+            router.push('/Education');
+        }
     };
 
     return (
         <Layout>
             <Typography variant="h4" component="h1" gutterBottom>
-                What dwelling do you live in?
+                9. What dwelling do you live in?
             </Typography>
             <Dropdown
                 options={dwellingOptions}

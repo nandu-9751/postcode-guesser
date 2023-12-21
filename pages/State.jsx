@@ -1,6 +1,6 @@
 // dropdown
 
-import React from "react";
+import React, {useState} from "react";
 import Dropdown from "../components/Dropdown"; 
 import Layout from "../components/Layout";
 import { useRouter } from "next/router";
@@ -19,11 +19,14 @@ function  State() {
         { label: "Australian Capital Territory (ACT)", value: "ACT" },
         { label: "Northern Territory (NT)", value: "NT" },
     ];
+
+    const [selectedState, setSelectedState] = useState(null);
     
     const router = useRouter();
 
     const handleSelect = (value) => {
         console.log("Selected Highest Education:", value);
+        setSelectedState(value);
     };
 
     const handlePrevious = () => {
@@ -32,14 +35,20 @@ function  State() {
     };
 
     const handleNext = () => {
-        console.log("Next button clicked");
-        router.push('/Ethnic');
+        if (!selectedState) {
+            alert("Please select your state.");
+        }
+        else {
+            console.log(selectedState)
+            console.log("Next button clicked");
+            router.push('/Ethnic');
+        }
     };
 
     return (
         <Layout>
             <Typography variant="h4" component="h1" gutterBottom>
-                What state do you live in?
+                5. What state do you live in?
             </Typography>
             <Dropdown
                 options={stateOptions}
@@ -47,12 +56,12 @@ function  State() {
                 onSelect={handleSelect}
             />
             <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
-            <Button variant="contained" color="primary" onClick={handlePrevious}>
-                Back
-            </Button>
-            <Button variant="contained" color="primary" onClick={handleNext}>
-                Next
-            </Button>
+                <Button variant="contained" color="primary" onClick={handlePrevious}>
+                    Back
+                </Button>
+                <Button variant="contained" color="primary" onClick={handleNext}>
+                    Next
+                </Button>
             </Box>
         </Layout>
     );

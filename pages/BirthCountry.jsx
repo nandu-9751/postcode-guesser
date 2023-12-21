@@ -1,7 +1,5 @@
 // dropdown
-
-import React from "react";
-import Dropdown from "../components/Dropdown"; 
+import React, { useState } from "react";import Dropdown from "../components/Dropdown"; 
 import Layout from "../components/Layout";
 import { useRouter } from "next/router";
 import Typography from '@mui/material/Typography';
@@ -32,8 +30,11 @@ function  BirthCountry() {
     
     const router = useRouter();
 
+    const [selectedCountry, setSelectedCountry] = useState(null); 
+
     const handleSelect = (value) => {
-        console.log("Selected Highest Education:", value);
+        setSelectedCountry(value); 
+        console.log("Selected Country of Birth:", value);
     };
 
     const handlePrevious = () => {
@@ -42,14 +43,21 @@ function  BirthCountry() {
     };
 
     const handleNext = () => {
-        console.log("Next button clicked");
-        router.push('/Language');
+        //check if country is selected
+        if (!selectedCountry) {
+            alert("Please select your country of birth.");
+        }
+        else {
+            console.log(selectedCountry)
+            console.log("Next button clicked");
+            router.push('/Language');
+        }
     };
 
     return (
         <Layout>
             <Typography variant="h4" component="h1" gutterBottom>
-                Country of birth
+                7. Country of birth
             </Typography>
             <Dropdown
                 options={countryOptions}

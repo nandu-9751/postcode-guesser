@@ -13,7 +13,10 @@ function HouseSize() {
     const router = useRouter();
 
     const handleNext = () => {
-        console.log("Next button clicked");
+        if ((size < 1) || (isNaN(size))) {
+            alert("Please enter a valid household size");
+            return;
+        }
         router.push('/Income');
     };
 
@@ -25,12 +28,12 @@ function HouseSize() {
     return (
         <Layout>
             <Typography variant="h4" component="h1" gutterBottom>
-                Enter your Household Size
+                2. Enter your Household Size
             </Typography>
             <TextInput
                 type="number"
                 value={size}
-                onChange={(e) => setSize(Number(e.target.value))}
+                onChange={setSize}
                 label="Household Size"
             />
             <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between' }}>

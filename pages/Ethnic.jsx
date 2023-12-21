@@ -1,6 +1,6 @@
 // dropdown
 
-import React from "react";
+import React, { useState } from "react";
 import Dropdown from "../components/Dropdown"; 
 import Layout from "../components/Layout";
 import { useRouter } from "next/router";
@@ -21,11 +21,13 @@ function  Ethnic() {
         { value: "Other", label: "Other" },
     ];
     
+    const [selectedEthnic, setSelectedEthnic] = useState(null);
     
     const router = useRouter();
 
     const handleSelect = (value) => {
         console.log("Selected Highest Education:", value);
+        setSelectedEthnic(value);
     };
 
     const handlePrevious = () => {
@@ -34,14 +36,20 @@ function  Ethnic() {
     };
 
     const handleNext = () => {
-        console.log("Next button clicked");
-        router.push('/BirthCountry');
+        if (!selectedEthnic) {
+            alert("Please select your ethnic background.");
+        }
+        else {
+            console.log(selectedEthnic)
+            console.log("Next button clicked");
+            router.push('/BirthCountry');
+        }
     };
 
     return (
         <Layout>
             <Typography variant="h4" component="h1" gutterBottom>
-                Ethnic background
+                6. Ethnic background
             </Typography>
             <Dropdown
                 options={ethnicOptions}
